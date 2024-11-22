@@ -11,7 +11,7 @@ import io.cucumber.junit.*;
 		plugin = {"pretty", "html:target/HtmlReports/cucumber-reports.html"},
 		//plugin = { "json", "json:target/JSONReports/report.json" },
 		//plugin = { "json", "junit:target/JUnitReports/report.xml" },
-		tags="@regression"
+		tags="@sanity"
 )
 public class TestRunner {
 
