@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.562" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Feature to test login functionality" name="Check login is successful with valid credentials" time="0.061">
+<testsuite name="Cucumber" time="53.544" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Successful Login with Valid Credentials" time="21.078">
 <system-out><![CDATA[
-Given user is on login page.................................................passed
-When user enters username and password......................................passed
-And clicks on login button..................................................passed
-Then user is navigated to the home page.....................................passed
+Given User Launch Edge browser..............................................passed
+When User opens URL "https://demo.guru99.com/test/newtours/"................passed
+And User enters Username as "autotest1" and Password as "autotest1".........passed
+And Click on Submit.........................................................passed
+Then Page Title should be "Login: Mercury Tours"............................passed
+When User click on Signoff link.............................................passed
+Then Page Title should be "Welcome: Mercury Tours"..........................passed
+And close browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Login Data Driven - #1.1" time="16.341">
+<system-out><![CDATA[
+Given User Launch Edge browser..............................................passed
+When User opens URL "https://demo.guru99.com/test/newtours/"................passed
+And User enters Username as "autotest1" and Password as "autotest1".........passed
+And Click on Submit.........................................................passed
+Then Page Title should be "Login: Mercury Tours"............................passed
+When User click on Signoff link.............................................passed
+Then Page Title should be "Welcome: Mercury Tours"..........................passed
+And close browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Login Data Driven - #1.2" time="15.86">
+<system-out><![CDATA[
+Given User Launch Edge browser..............................................passed
+When User opens URL "https://demo.guru99.com/test/newtours/"................passed
+And User enters Username as "autotest2" and Password as "autopass2".........passed
+And Click on Submit.........................................................passed
+Then Page Title should be "Login: Mercury Tours"............................passed
+When User click on Signoff link.............................................passed
+Then Page Title should be "Welcome: Mercury Tours"..........................passed
+And close browser...........................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

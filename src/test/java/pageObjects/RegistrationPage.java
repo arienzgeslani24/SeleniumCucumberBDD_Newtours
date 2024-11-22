@@ -1,9 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
@@ -13,7 +11,7 @@ public class RegistrationPage {
 
 	public RegistrationPage(WebDriver rdriver) {
 		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+		PageFactory.initElements(ldriver, this);
 	}
 
 	By lnkRegister = By.xpath("//a[@href='register.php']");
@@ -35,6 +33,12 @@ public class RegistrationPage {
 	By txtConfirmPassword = By.xpath("//input[@name='confirmPassword']");
 
 	By btnSubmit = By.xpath("//input[@name='submit']");
+
+	// Action Methods
+
+	/*public String getPageTitle() {
+		return ldriver.getTitle();
+	}*/
 
 	public void clickRegister() {
 		ldriver.findElement(lnkRegister).click();

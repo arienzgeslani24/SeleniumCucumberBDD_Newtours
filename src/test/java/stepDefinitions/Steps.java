@@ -1,20 +1,17 @@
 package stepDefinitions;
 
-import org.apache.commons.codec.language.bm.Rule.RPattern;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
 import io.cucumber.java.en.*;
 import pageObjects.LoginPage;
 import pageObjects.RegistrationPage;
 
-public class Steps {
+public class Steps extends BaseClass {
 
-	public WebDriver driver;
-	public LoginPage lp;
-	public RegistrationPage rp;
+	
+	//Login Page - Step Definitions
 
 	@Given("User Launch Edge browser")
 	public void user_launch_edge_browser() {
@@ -28,6 +25,7 @@ public class Steps {
 	public void user_opens_url(String url) {
 
 		driver.get(url);
+	    driver.manage().window().maximize();
 
 	}
 
@@ -71,6 +69,8 @@ public class Steps {
 		lp.clickSignoff();
 
 	}
+	
+	//Registration Page - Step Definitions
 
 	@When("User click on Register link")
 	public void user_click_on_register_link() {
@@ -110,9 +110,8 @@ public class Steps {
 
 	@Then("User can view confirmation message {string}")
 	public void user_can_view_confirmation_message(String string) {
-		
-        Assert.assertTrue(driver.findElement(By.xpath("//a[@href='login.php']")).getText()
-                .contains(string));
+
+		Assert.assertTrue(driver.findElement(By.xpath("//a[@href='login.php']")).getText().contains(string));
 
 	}
 

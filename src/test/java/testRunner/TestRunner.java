@@ -6,12 +6,15 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/Features/", 
-		glue = {"stepDefinitions"},
+		glue = "stepDefinitions",
+		dryRun=false,
 		monochrome = true, 
-		plugin = {"pretty", "html:target/HtmlReports/cucumber-reports.html"},
-		//plugin = { "json", "json:target/JSONReports/report.json" },
-		//plugin = { "json", "junit:target/JUnitReports/report.xml" },
-		tags="@sanity"
+		plugin = {
+				"pretty",
+				"html:target/HtmlReports/cucumber-reports.html",
+				"json:target/JSONReports/report.json",
+				"junit:target/JUnitReports/report.xml"},
+		tags="@regression"
 )
 public class TestRunner {
 
