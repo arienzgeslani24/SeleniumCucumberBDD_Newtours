@@ -1,6 +1,6 @@
 Feature: HomePage
 
-@sanity
+@HomePageTest
 Scenario: Successful Launching of the Application
 	Given User Launch Edge browser
 	When User opens URL "https://demo.guru99.com/test/newtours/"

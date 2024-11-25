@@ -4,7 +4,7 @@ Feature: Login
 	Given User Launch Edge browser
 	When User opens URL "https://demo.guru99.com/test/newtours/"
 
-@regression
+@loginPageTest @Sanity
 Scenario: Successful Login with Valid Credentials
 	And User enters Username as "autotest1" and Password as "autotest1"
 	And Click on Submit
@@ -13,7 +13,7 @@ Scenario: Successful Login with Valid Credentials
 	Then Page Title should be "Welcome: Mercury Tours"
 	And close browser
 
-@regression
+@loginPageTest @Regression
 Scenario Outline: Login Data Driven
 	And User enters Username as "<username>" and Password as "<password>"
 	And Click on Submit

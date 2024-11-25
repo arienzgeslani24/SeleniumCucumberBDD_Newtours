@@ -30,8 +30,9 @@ import io.cucumber.junit.*;
 				"junit:target/JUnitReports/report.xml" // Generates a JUnit XML report for integration with CI tools
 		},
 
-		// Tags filter to execute specific scenarios with the tag '@sanity1'
-		tags = "@sanity1")
+		// Tags filter to execute specific scenarios with the tag 
+		tags = "@Sanity"
+		)
 public class TestRunner {
 	// This class is used to configure and run the Cucumber tests. It acts as the
 	// entry point for the test execution.

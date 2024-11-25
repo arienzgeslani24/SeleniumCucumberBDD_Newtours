@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="23.502" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Registration" name="Successful Login with Valid Credentials" time="23.284">
+<testsuite name="Cucumber" time="18.849" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Successful Login with Valid Credentials" time="18.612">
 <system-out><![CDATA[
 Given User Launch Edge browser..............................................passed
 When User opens URL "https://demo.guru99.com/test/newtours/"................passed
-When User click on Register link............................................passed
-Then Page Title should be "Register: Mercury Tours".........................passed
-When User enter customer info...............................................passed
-And click on Submit button..................................................passed
-Then User can view confirmation message "sign-in"...........................passed
+And User enters Username as "autotest1" and Password as "autotest1".........passed
+And Click on Submit.........................................................passed
+Then Page Title should be "Login: Mercury Tours"............................passed
+When User click on Signoff link.............................................passed
+Then Page Title should be "Welcome: Mercury Tours"..........................passed
 And close browser...........................................................passed
 ]]></system-out>
 </testcase>
