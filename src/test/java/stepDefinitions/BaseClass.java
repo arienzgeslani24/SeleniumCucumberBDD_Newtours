@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pageObjects.LoginPage;
 import pageObjects.RegistrationPage;
+import java.util.Properties;
 
 public class BaseClass {
 
@@ -15,6 +16,7 @@ public class BaseClass {
 	public LoginPage lp;
 	public RegistrationPage rp;
 	public static Logger logger;
+	public Properties configProp;
 
 	// Method to generate a random string for unique email or other unique
 	// identifiers

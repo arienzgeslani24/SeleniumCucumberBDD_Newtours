@@ -1,15 +1,65 @@
 package stepDefinitions;
 
+import io.cucumber.java.Before;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import io.cucumber.java.en.*;
 import pageObjects.LoginPage;
 import pageObjects.RegistrationPage;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+
 public class Steps extends BaseClass {
+	
+	
+	@Before
+	public void setup() throws IOException
+	{
+		
+		//Reading Properties 
+		configProp = new Properties();
+		FileInputStream configPropfile=new FileInputStream("config.properties");
+		configProp.load(configPropfile);
+		
+		logger = Logger.getLogger("Newtours"); 
+		
+		// Configure log4j properties
+		PropertyConfigurator.configure("log4j.properties"); 
+		
+		
+		String br=configProp.getProperty("browser");
+		if(br.equals("chrome"))
+		{
+			// Initializes EdgeDriver for launching the Edge browser
+			logger.info("Launching Chrome browser...");
+			driver = new ChromeDriver();
+			
+		}
+		if(br.equals("edge"))
+		{
+			// Initializes EdgeDriver for launching the Edge browser
+			logger.info("Launching Edge browser...");
+			driver = new EdgeDriver();
+			
+		}
+		if(br.equals("firefox"))
+		{
+			// Initializes EdgeDriver for launching the Edge browser
+			logger.info("Launching Firefox browser...");
+			driver = new FirefoxDriver();
+			
+		}
+	
+	}
 
 	// Login Page - Step Definitions
 
@@ -17,14 +67,6 @@ public class Steps extends BaseClass {
 	@Given("User Launch Edge browser")
 	public void user_launch_edge_browser() {
 
-		logger = Logger.getLogger("Newtours"); 
-		
-		// Configure log4j properties
-		PropertyConfigurator.configure("log4j.properties"); 
-
-		// Initializes EdgeDriver for launching the Edge browser
-		logger.info("Launching the browser...");
-		driver = new EdgeDriver();
 		// Creates an instance of LoginPage using the driver
 		lp = new LoginPage(driver);
 		logger.info("Edge browser launched successfully and LoginPage object created.");
