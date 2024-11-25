@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="70.609" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Login" name="Login using Data from Excel Sheet - #1.1" time="23.005">
+<testsuite name="Cucumber" time="38.79" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Login using Data from Excel Sheet - #1.1" time="21.357">
 <system-out><![CDATA[
 Given User Launch Edge browser..............................................passed
 When User opens URL "https://demo.guru99.com/test/newtours/"................passed
@@ -12,7 +12,7 @@ Then Page Title should be "Welcome: Mercury Tours"..........................pass
 And close browser...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login" name="Login using Data from Excel Sheet - #1.2" time="47.158">
+<testcase classname="Login" name="Login using Data from Excel Sheet - #1.2" time="17.174">
 <system-out><![CDATA[
 Given User Launch Edge browser..............................................passed
 When User opens URL "https://demo.guru99.com/test/newtours/"................passed

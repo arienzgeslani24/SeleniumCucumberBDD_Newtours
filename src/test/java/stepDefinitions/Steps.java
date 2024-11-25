@@ -4,7 +4,6 @@ import io.cucumber.java.Before;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -206,20 +205,41 @@ public class Steps extends BaseClass {
 	
 	@When("user fills the form from the given sheetname {string} and rownumber {int}")
 	public void user_fills_the_form_from_the_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
-	//public void user_fills_the_form_from_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
-		
-		ExcelReader reader = new ExcelReader();
-		List<Map<String,String>> testData = 
-				reader.getData("C:\\Users\\arienz.r.geslani\\eclipse\\SeleniumCucumberBDD_Newtours\\src\\test\\resources\\data\\testData.xlsx", sheetName);
+	    // Initialize the logger (ensure your logger is properly set up in your project)
+	    Logger logger = Logger.getLogger(this.getClass().getName());
+	    
+	    // Log the start of the step
+	    logger.info("Started executing: user_fills_the_form_from_the_given_sheetname_and_rownumber");
+	    logger.info("Sheet Name: " + sheetName + ", Row Number: " + rowNumber);
 
-	
-		String userName = testData.get(rowNumber).get("username");
-		String password = testData.get(rowNumber).get("password");
-		
-		lp.setUserName(userName);
-		lp.setPassword(password);
+	    // Create an instance of ExcelReader to fetch data from the Excel file
+	    ExcelReader reader = new ExcelReader();
 
+	    // Retrieve test data from the specified Excel sheet and row number
+	    logger.info("Reading test data from the Excel file...");
+	    List<Map<String, String>> testData = reader.getData(
+	        "C:\\Users\\arienz.r.geslani\\eclipse\\SeleniumCucumberBDD_Newtours\\src\\test\\resources\\data\\testData.xlsx", 
+	        sheetName
+	    );
+
+	    // Extract specific data (e.g., username and password) from the test data
+	    String userName = testData.get(rowNumber).get("username");
+	    String password = testData.get(rowNumber).get("password");
+
+	    // Log the data being set for debugging purposes
+	    logger.info("Extracted Data - Username: " + userName + ", Password: " + (password != null ? "[HIDDEN]" : "null"));
+
+	    // Set the username and password in the login page object
+	    lp.setUserName(userName);
+	    logger.info("Set username in the login form.");
+
+	    lp.setPassword(password);
+	    logger.info("Set password in the login form.");
+
+	    // Log the completion of the step
+	    logger.info("Completed executing: user_fills_the_form_from_the_given_sheetname_and_rownumber");
 	}
+
 
 
 

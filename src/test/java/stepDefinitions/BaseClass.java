@@ -12,7 +12,7 @@ public class BaseClass {
 	// WebDriver instance for interacting with the browser in the tests
 	public WebDriver driver;
 
-	// Page Object instances for LoginPage and RegistrationPage
+	// Page Object instances for LoginPage, RegistrationPage, Logger and Properties
 	public LoginPage lp;
 	public RegistrationPage rp;
 	public static Logger logger;
