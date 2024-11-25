@@ -1,6 +1,6 @@
 Feature: Registration
 
-  @sanity
+  @registrationPageTest
   Scenario: Successful Login with Valid Credentials
     Given User Launch Edge browser
     When User opens URL "https://demo.guru99.com/test/newtours/"

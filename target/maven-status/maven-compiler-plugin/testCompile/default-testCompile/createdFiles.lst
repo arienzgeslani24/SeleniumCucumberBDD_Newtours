@@ -1,0 +1,6 @@
+pageObjects\LoginPage.class
+testRunner\TestRunner.class
+stepDefinitions\BaseClass.class
+utilities\WaitHelper.class
+stepDefinitions\Steps.class
+pageObjects\RegistrationPage.class

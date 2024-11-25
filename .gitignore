@@ -1,0 +1,35 @@
+# Java specific
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse and IDE-specific files
+/.project
+/.classpath
+/.settings/
+
+
+# Build output directories
+/bin/
+/target/
+/build/
+
+# Dependency directories (Maven)
+/lib/
+/libs/
+/target/
+*.log
+
+# Cucumber reports and logs
+/logs/
+/target/cucumber-reports/
+/target/*.json
+/target/*.html
+/target/*.xml
+
+# Maven wrapper
+.mvn/
+
+# Bat file
+.bat/
