@@ -8,14 +8,14 @@
 /.project
 /.classpath
 /.settings/
-.idea/
+
 
 # Build output directories
 /bin/
 /target/
 /build/
 
-# Dependency directories (Maven or Gradle)
+# Dependency directories (Maven)
 /lib/
 /libs/
 /target/
@@ -28,13 +28,8 @@
 /target/*.html
 /target/*.xml
 
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
 # Maven wrapper
 .mvn/
 
-# Gradle wrapper
-.gradle/
+# Bat file
+.bat/

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="18.849" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Login" name="Successful Login with Valid Credentials" time="18.612">
+<testsuite name="Cucumber" time="20.752" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Successful Login with Valid Credentials" time="20.48">
 <system-out><![CDATA[
 Given User Launch Edge browser..............................................passed
 When User opens URL "https://demo.guru99.com/test/newtours/"................passed
