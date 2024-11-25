@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pageObjects.LoginPage;
 import pageObjects.RegistrationPage;
@@ -13,6 +14,7 @@ public class BaseClass {
 	// Page Object instances for LoginPage and RegistrationPage
 	public LoginPage lp;
 	public RegistrationPage rp;
+	public static Logger logger;
 
 	// Method to generate a random string for unique email or other unique
 	// identifiers
