@@ -3,6 +3,8 @@ package stepDefinitions;
 import io.cucumber.java.Before;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,10 +14,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import io.cucumber.java.en.*;
 import pageObjects.LoginPage;
 import pageObjects.RegistrationPage;
+import utilities.ExcelReader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+
+import java.util.List;
+import java.util.Map;
 
 
 public class Steps extends BaseClass {
@@ -197,4 +203,24 @@ public class Steps extends BaseClass {
 		logger.info("Confirmation message validated successfully: " + string);
 
 	}
+	
+	@When("user fills the form from the given sheetname {string} and rownumber {int}")
+	public void user_fills_the_form_from_the_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
+	//public void user_fills_the_form_from_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
+		
+		ExcelReader reader = new ExcelReader();
+		List<Map<String,String>> testData = 
+				reader.getData("C:\\Users\\arienz.r.geslani\\eclipse\\SeleniumCucumberBDD_Newtours\\src\\test\\resources\\data\\testData.xlsx", sheetName);
+
+	
+		String userName = testData.get(rowNumber).get("username");
+		String password = testData.get(rowNumber).get("password");
+		
+		lp.setUserName(userName);
+		lp.setPassword(password);
+
+	}
+
+
+
 }

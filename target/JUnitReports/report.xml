@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="20.752" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Login" name="Successful Login with Valid Credentials" time="20.48">
+<testsuite name="Cucumber" time="70.609" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="Login using Data from Excel Sheet - #1.1" time="23.005">
 <system-out><![CDATA[
 Given User Launch Edge browser..............................................passed
 When User opens URL "https://demo.guru99.com/test/newtours/"................passed
-And User enters Username as "autotest1" and Password as "autotest1".........passed
+When user fills the form from the given sheetname "userlogin" and rownumber 0.passed
+And Click on Submit.........................................................passed
+Then Page Title should be "Login: Mercury Tours"............................passed
+When User click on Signoff link.............................................passed
+Then Page Title should be "Welcome: Mercury Tours"..........................passed
+And close browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Login using Data from Excel Sheet - #1.2" time="47.158">
+<system-out><![CDATA[
+Given User Launch Edge browser..............................................passed
+When User opens URL "https://demo.guru99.com/test/newtours/"................passed
+When user fills the form from the given sheetname "userlogin" and rownumber 1.passed
 And Click on Submit.........................................................passed
 Then Page Title should be "Login: Mercury Tours"............................passed
 When User click on Signoff link.............................................passed

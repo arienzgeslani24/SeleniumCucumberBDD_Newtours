@@ -28,4 +28,18 @@ Examples:
 		| autotest2 | autopass2 |
 		#| auto2 | invalid |
 	
-	
+
+	@loginPageTest @TestExcelData
+Scenario Outline: Login using Data from Excel Sheet
+	When user fills the form from the given sheetname "<SheetName>" and rownumber <RowNumber>
+	And Click on Submit
+	Then Page Title should be "Login: Mercury Tours"
+	When User click on Signoff link
+	Then Page Title should be "Welcome: Mercury Tours"
+	And close browser
+
+Examples:
+		| SheetName | RowNumber |
+		| userlogin | 0 |
+		| userlogin | 1 |
+

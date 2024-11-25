@@ -31,7 +31,7 @@ import io.cucumber.junit.*;
 		},
 
 		// Tags filter to execute specific scenarios with the tag 
-		tags = "@Sanity"
+		tags = "@TestExcelData"
 		)
 public class TestRunner {
 	// This class is used to configure and run the Cucumber tests. It acts as the
